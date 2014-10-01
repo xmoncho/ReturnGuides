@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="database" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+	    <property name="url" value="jdbc:oracle:thin:@10.10.33.75:1522:DBPRDAT01" />
+	    <property name="username" value="sicoadm" />
+	    <property name="password" value="eg1pt040" />
+	</bean>
+
+	<bean id="releasedCarDAO" class="com.ferromex.returnGuides.daos.ReleasedCarDAOImpl">
+	    <property name="datasource" ref="database" />
+	</bean>
+</beans>
